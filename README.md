@@ -53,12 +53,12 @@ order by count(*) desc
 ```
 
 ### Data filtering
-We found that TravisPoker,  the tool included in TravisTorrent project (https://github.com/TestRoots/travistorrent-tools) for checking if a repository use Travis CI, is unusable possibly due to lack of maintenance. Therefore we studied TravisTorrent source code and developed our own Node.js program that queries Travis API to check the usage of Travis CI all of the repositories indicated by the rows in .csv file. 
+We found that TravisPoker,  the tool included in TravisTorrent project (https://github.com/TestRoots/travistorrent-tools) for checking if a repository use Travis CI, is unusable possibly due to lack of maintenance. Therefore we studied TravisTorrent source code and developed our own Node.js program that queries Travis API to check the usage of Travis CI in all of the repositories indicated by the rows in .csv file. 
 
 To use this program, the developer should have Node.js installed on the machine and run the following command in the project directory:
-```Node
-> $ npm install
-> $ node index.js
+```console
+npm install
+node index.js
 ```
 This will produce 'gh-active-projects-legacy-o.csv' file, which an integer at the end of each row indicating the 'last_build_number'. If the number is -1, then it means the repo does not use Travis CI.
 
