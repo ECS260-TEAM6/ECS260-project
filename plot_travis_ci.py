@@ -31,13 +31,13 @@ sorted_language = np.array(language_list, dtype=object)
 x = sorted_language[:, 0]
 y = np.array([k for k in sorted_language[:, 1]])
 no_travis = y[:, 0]
-lte_travis = y[:, 1] + no_travis
-gt_travis = y[:, 2] + lte_travis
+lte_travis = y[:, 1]
+gt_travis = y[:, 2]
 print(sorted_language)
 
 plt.barh(x, no_travis, label='Does Not Use Travis', color='tomato')
 plt.barh(x, lte_travis, left=no_travis, label='Uses Travis (<= 50 builds)', color='seagreen')
-plt.barh(x, gt_travis, left=lte_travis, label='Uses Travis (> 50 builds)', color='lightskyblue')
+plt.barh(x, gt_travis, left=lte_travis + no_travis, label='Uses Travis (> 50 builds)', color='lightskyblue')
 
 plt.ylabel('Main Repository Language')
 plt.xlabel('#Projects')
