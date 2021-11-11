@@ -33,6 +33,7 @@ y = np.array([k for k in sorted_language[:, 1]])
 no_travis = y[:, 0]
 lte_travis = y[:, 1]
 gt_travis = y[:, 2]
+print(sorted_language)
 
 plt.barh(x, no_travis, label='Does Not Use Travis', color='tomato')
 plt.barh(x, lte_travis, left=no_travis, label='Uses Travis (<= 50 builds)', color='seagreen')
