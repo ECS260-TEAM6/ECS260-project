@@ -236,3 +236,11 @@ gevent,gevent,Python,2161,3946
 nicolargo,glances,Python,2146,3250
 quantopian,zipline,Python,2134,10999
 mojombo,grit,Ruby,2134,1
+sympy,sympy,Python,2129,46561
+mitsuhiko,click,Python,2127,-1
+gabrielemariotti,cardslib,Java,2123,154
+android,platform_frameworks_base,Java,2109,-1
+wyouflf,xUtils,Java,2092,-1
+bup,bup,Python,2092,-1
+spray,spray,Scala,2091,1737
+scalaz,scalaz,Scala,2091,6015
