@@ -4,7 +4,7 @@ import csv
 
 language_dict = {'Total': [0, 0, 0]}
 
-with open('gh-active-projects-legacy.csv') as csv_file:
+with open('gh-active-projects-legacy-o.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0
     for row in csv_reader:
