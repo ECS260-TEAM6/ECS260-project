@@ -2,8 +2,9 @@ const fs = require('fs');
 const readline = require('readline');
 const axios = require('axios');
 
-const fPath = './gh-active-projects-legacy.csv';
-const outFile = 'gh-active-projects-legacy-o.csv';
+var args = process.argv.slice(2);
+const fPath = args[0];
+const outFile = args[1];
 
 async function processLineByLine() {
     const rStream = fs.createReadStream(fPath);
