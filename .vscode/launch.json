@@ -11,6 +11,6 @@
             "<node_internals>/**"
         ],
         "program": "${workspaceFolder}\/index.js",
-        "runtimeArgs": ["${workspaceFolder}\/index.js", "${workspaceFolder}\/repos_2021_500_out.csv", "${workspaceFolder}\/repos_2021_500_extracted.csv", "extract"]
+        "runtimeArgs": ["${workspaceFolder}\/index.js", "${workspaceFolder}\/repos_2021_500_out.csv", "${workspaceFolder}\/repos_2021_500_extracted_4Languages.csv", "extract"]
     }]
 }

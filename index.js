@@ -68,12 +68,16 @@ async function extract(line) {
     const items = line.split(',');
     const login = items[0];
     const project = items[1];
+    const lang = items[2];
     const isEnabled = items[4];
 
-    if (isEnabled == '-1') {
-        return;
+    if (isEnabled != '-1' && (
+        lang == 'Java' ||
+        lang == 'Go' ||
+        lang == 'Ruby' ||
+        lang == 'Python')) {
+        await fs.appendFileSync(outFile, `${items.slice(0, 2).join(' ')}\n`);
     }
-    await fs.appendFileSync(outFile, `${items.slice(0, 2).join(' ')}\n`);
 }
 
 
