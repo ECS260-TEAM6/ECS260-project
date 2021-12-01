@@ -6,11 +6,65 @@
     "configurations": [{
         "type": "pwa-node",
         "request": "launch",
-        "name": "Launch Program",
+        "name": "Extract repos writen in Java",
         "skipFiles": [
             "<node_internals>/**"
         ],
         "program": "${workspaceFolder}\/index.js",
-        "runtimeArgs": ["${workspaceFolder}\/index.js", "${workspaceFolder}\/repos_2021_500_out.csv", "${workspaceFolder}\/repos_2021_500_extracted_4Languages.csv", "extract"]
+        "runtimeArgs": [
+            "${workspaceFolder}\/index.js", 
+            "${workspaceFolder}\/repos_2021_500_out.csv", 
+            "${workspaceFolder}\/repos_2021_500_extracted_Java.csv", 
+            "extract",
+            "Java"
+        ]
+    },
+    {
+        "type": "pwa-node",
+        "request": "launch",
+        "name": "Extract repos writen in Python",
+        "skipFiles": [
+            "<node_internals>/**"
+        ],
+        "program": "${workspaceFolder}\/index.js",
+        "runtimeArgs": [
+            "${workspaceFolder}\/index.js", 
+            "${workspaceFolder}\/repos_2021_500_out.csv", 
+            "${workspaceFolder}\/repos_2021_500_extracted_Python.csv", 
+            "extract",
+            "Python"
+        ]
+    },
+    {
+        "type": "pwa-node",
+        "request": "launch",
+        "name": "Extract repos writen in Go",
+        "skipFiles": [
+            "<node_internals>/**"
+        ],
+        "program": "${workspaceFolder}\/index.js",
+        "runtimeArgs": [
+            "${workspaceFolder}\/index.js", 
+            "${workspaceFolder}\/repos_2021_500_out.csv", 
+            "${workspaceFolder}\/repos_2021_500_extracted_Go.csv", 
+            "extract",
+            "Go"
+        ]
+    },
+    {
+        "type": "pwa-node",
+        "request": "launch",
+        "name": "Extract repos writen in Ruby",
+        "skipFiles": [
+            "<node_internals>/**"
+        ],
+        "program": "${workspaceFolder}\/index.js",
+        "runtimeArgs": [
+            "${workspaceFolder}\/index.js", 
+            "${workspaceFolder}\/repos_2021_500_out.csv", 
+            "${workspaceFolder}\/repos_2021_500_extracted_Ruby.csv", 
+            "extract",
+            "Ruby"
+        ]
     }]
 }

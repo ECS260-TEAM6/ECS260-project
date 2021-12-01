@@ -63,6 +63,7 @@ async function poke(line) {
 
 async function extract(line) {
     console.log(`Line from file: ${line}`);
+    const desiredLang = args[3];
 
     // [login, project, language, watchers]
     const items = line.split(',');
@@ -72,10 +73,7 @@ async function extract(line) {
     const isEnabled = items[4];
 
     if (isEnabled != '-1' && (
-        lang == 'Java' ||
-        lang == 'Go' ||
-        lang == 'Ruby' ||
-        lang == 'Python')) {
+        desiredLang == lang)) {
         await fs.appendFileSync(outFile, `${items.slice(0, 2).join(' ')}\n`);
     }
 }
