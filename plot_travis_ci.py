@@ -27,12 +27,13 @@ with open(filename) as csv_file:
 
 
 language_list = list(language_dict.items())
-# language_list = list(filter(lambda item: item[0] != '\\N', language_list))
-language_list = list(filter(lambda item: item[0] in selected_languages, language_list))
+language_list = list(filter(lambda item: item[0] != '\\N', language_list))
+# language_list = list(filter(lambda item: item[0] in selected_languages, language_list))
 language_list.sort(key=lambda e: sum(e[1]))
-# language_list = language_list[-6:]
+selected_language_list = list(filter(lambda item: item[0] == 'Ruby', language_list)) + language_list[-6:]
+print(selected_language_list)
 
-sorted_language = np.array(language_list, dtype=object)
+sorted_language = np.array(selected_language_list, dtype=object)
 x = sorted_language[:, 0]
 y = np.array([k for k in sorted_language[:, 1]])
 no_travis = y[:, 0]
