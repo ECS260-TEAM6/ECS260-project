@@ -36,9 +36,9 @@ The is a code and data repository associated with the research of Team 6 in ECS2
 
 <!-- GETTING STARTED -->
 ### Data Restoration
-We download and restore MySQL dump files from GHTorrent into a MySQL database on a virtual machine running on Google Cloud Platform (GCP). Currently, we have restored a snapshot of GitHub metadata in August, 2015, and another one in June, 2019. Due to the limit of time, we have only finished processing the snapshot captured in August. 2015.
+We download and restore MySQL dump files (http://ghtorrent-downloads.ewi.tudelft.nl/mysql/mysql-2021-03-06.tar.gz) from GHTorrent into a MySQL database on virtual machines running on Google Cloud Platform (GCP)
 
-We generate 'gh-active-projects-legacy.csv' file based on the snapshot of GitHub metadata captured in 2015 by running the following SQL:
+We selected the most popular repositories (more than or equals to 494 stars) by running the following SQL in the restored database:
 ```SQL
 select u.login, p.name, p.language, count(*)
 from projects p, users u, watchers w
@@ -48,7 +48,7 @@ where
     w.repo_id = p.id and
     u.id = p.owner_id
 group by p.id
-having count(*) > 50
+having count(*) >= 494
 order by count(*) desc
 ```
 
@@ -60,10 +60,10 @@ To use this program, the developer should have Node.js installed on the machine 
 npm install
 node index.js
 ```
-This will produce 'gh-active-projects-legacy-o.csv' file, which an integer at the end of each row indicating the 'last_build_number'. If the number is -1, then it means the repo does not use Travis CI.
+This will produce 'repos_2021_500_out.csv' file, which an integer at the end of each row indicating the 'last_build_number'. If the number is -1, then it means the repo does not use Travis CI.
 
 ### Preliminary Data Analysis
-We developed Python program to do preliminary data analysis based on 'gh-active-projects-legacy-o.csv' file to find differences in the use of Travis CI in different language projects, and visualize the results.
+We developed Python program to do preliminary data analysis based on 'repos_2021_500_out.csv' file to find differences in the use of Travis CI in different language projects, and visualize the results.
 
 ![Preliminary Data Analysis Result](/travis_ci_repos_2021_500_out.png)
 
