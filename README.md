@@ -65,7 +65,7 @@ This will produce 'gh-active-projects-legacy-o.csv' file, which an integer at th
 ### Preliminary Data Analysis
 We developed Python program to do preliminary data analysis based on 'gh-active-projects-legacy-o.csv' file to find differences in the use of Travis CI in different language projects, and visualize the results.
 
-![Preliminary Data Analysis Result](/travis_ci.png)
+![Preliminary Data Analysis Result](/travis_ci_repos_2021_500_out.png)
 
 ## Contributors
 Haochen Yang, Haoming Sun, Siyuan Liu, Yuxuan Chen, Zhengyang Jia
